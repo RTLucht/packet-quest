@@ -5,7 +5,7 @@
   PQ.W = 320;
   PQ.H = 240;
 
-  // ---- Palette: 16-color TekDollar blue set ----
+  // ---- Palette: 16-color Tech$$$ blue set ----
   PQ.C = {
     black: '#050a1e', navy: '#0b1a4a', blue: '#1a3a9a', royal: '#2850c8',
     sky: '#4a7ae8', cyan: '#7ad0ff', ice: '#c8ecff', white: '#ffffff',
@@ -168,7 +168,7 @@
     if (line) out.push(line);
     return out;
   };
-  // Framed panel in TekDollar style
+  // Framed panel in Tech$$$ style
   PQ.box = function (g, x, y, w, h, fill) {
     PQ.rect(g, x, y, w, h, PQ.C.cyan);
     PQ.rect(g, x + 1, y + 1, w - 2, h - 2, PQ.C.blue);
@@ -180,7 +180,7 @@
   };
   PQ.inRect = (p, x, y, w, h) => p.x >= x && p.x < x + w && p.y >= y && p.y < y + h;
 
-  // Procedural TekDollar banknote (matches the blue currency art).
+  // Procedural Tech$$$ banknote (matches the blue currency art).
   PQ.drawBill = function (g, x, y, w, h, denom, tilt) {
     g.save();
     g.translate(Math.round(x + w / 2), Math.round(y + h / 2));
@@ -207,7 +207,7 @@
       g.textAlign = 'right'; g.fillText(String(denom), x0 + w - 4, y0 + h - fs - 4);
       if (w >= 80) {
         g.font = '6px ' + PQ.FONT; g.textAlign = 'center'; g.fillStyle = PQ.C.ice;
-        g.fillText('TEKDOLLARS', 0, y0 + h - 10);
+        g.fillText('TECH$$$', 0, y0 + h - 10);
       }
     }
     g.restore();

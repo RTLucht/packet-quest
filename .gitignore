@@ -7,3 +7,5 @@ logs/
 node_modules/
 .DS_Store
 Thumbs.db
+tekdollars.png
+*.docx

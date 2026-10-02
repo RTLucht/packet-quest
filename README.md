@@ -1,6 +1,6 @@
-# Packet Quest: The TekDollar Run
+# Packet Quest: The Tech$$$ Run
 
-An 8-bit top-down network engineering adventure. You are a junior network engineer in The Enterprise: take tickets at HQ, walk to the site, fix the problem in a mini-game before the SLA runs out, and earn **TekDollars** (10s, 20s, 50s, and the rare 100). Rank up from Tier 1 Tech to Principal of the Packet Realm and survive The Great Outage.
+An 8-bit top-down network engineering adventure. You are a junior network engineer in The Enterprise: take tickets at HQ, walk to the site, fix the problem in a mini-game before the SLA runs out, and earn **Tech$$$** (10s, 20s, 50s, and the rare 100). Rank up from Tier 1 Tech to Principal of the Packet Realm and survive The Great Outage.
 
 Built by a three-model team: Claude (architecture, engine, overworld, flow, 3 mini-games), Codex (4 mini-games), and Grok (design brief, economy, tips, review).
 
@@ -23,8 +23,8 @@ Open `index.html` in a browser. No install, no build, no server. Progress saves 
 ## The loop
 
 1. **HQ terminal**: pick a ticket. Urgency (green/yellow/red) sets the SLA (150/110/85 s) and payout multiplier.
-2. **Travel** to the site. The SLA clock runs the whole time. Gremlins steal TD, the Interference Ghost slows you and doubles SLA drain, Shadow IT Slime splits when zapped, and the Change Window Phantom haunts 2–4 AM.
-3. **Mini-game**: fix it. Payout = base × level × urgency, plus up to +50% for SLA time left. A blown SLA halves pay. Fail costs a life (3 lives; burnout = 10% TD tax).
+2. **Travel** to the site. The SLA clock runs the whole time. Gremlins steal T$, the Interference Ghost slows you and doubles SLA drain, Shadow IT Slime splits when zapped, and the Change Window Phantom haunts 2–4 AM.
+3. **Mini-game**: fix it. Payout = base × level × urgency, plus up to +50% for SLA time left. A blown SLA halves pay. Fail costs a life (3 lives; burnout = 10% T$ tax).
 4. **Supply Depot**: console cable, coffee, Golden Label Maker, CCNA/CCNP/CCIE cert scrolls (unlock ticket types), AI drone, cosmetics.
 
 ## Mini-games
@@ -48,10 +48,10 @@ Open `index.html` in a browser. No install, no build, no server. Progress saves 
 
 ## Fun touches
 
-- Hidden **dns** button in a mini-game's HUD corner after 20 s. It solves the puzzle, pays 1 TD, and plays a sad trombone.
+- Hidden **dns** button in a mini-game's HUD corner after 20 s. It solves the puzzle, pays 1 T$, and plays a sad trombone.
 - On-call pager interrupts mid-mission.
 - Real networking tips on every loading screen.
-- Local leaderboard (top 8 lifetime TekDollars).
+- Local leaderboard (top 8 lifetime Tech$$$).
 
 ## Development
 

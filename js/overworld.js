@@ -187,7 +187,7 @@
     const st = PQ.state;
     const lost = Math.min(st.td, n);
     st.td -= lost;
-    OW.toast((lost ? '-' + lost + ' TD  ' : '') + why, C.red);
+    OW.toast((lost ? '-' + lost + ' T$  ' : '') + why, C.red);
   }
 
   function nearDoor() {
@@ -265,9 +265,9 @@
             OW.toast('SHADOW IT SPLIT! UNMANAGED SWITCH!', C.purple);
           } else if (e.hp <= 0) {
             e.dead = true; PQ.sfx('hit');
-            if (e.type === 'phantom') { st.td += 25; st.earned += 25; OW.toast('PHANTOM BANISHED +25 TD', C.green); OW.burstBills(25); }
-            else if (e.type === 'slime') { st.td += 3; st.earned += 3; OW.toast('+3 TD  SWITCH DECOMMISSIONED', C.green); }
-            else if (Math.random() < 0.35) { st.td += 5; st.earned += 5; OW.toast('+5 TD  LOOSE CHANGE', C.green); }
+            if (e.type === 'phantom') { st.td += 25; st.earned += 25; OW.toast('PHANTOM BANISHED +25 T$', C.green); OW.burstBills(25); }
+            else if (e.type === 'slime') { st.td += 3; st.earned += 3; OW.toast('+3 T$  SWITCH DECOMMISSIONED', C.green); }
+            else if (Math.random() < 0.35) { st.td += 5; st.earned += 5; OW.toast('+5 T$  LOOSE CHANGE', C.green); }
           }
         });
         enemies = enemies.filter((e) => !e.dead).concat(spawned);
@@ -304,7 +304,7 @@
         if (Math.hypot(ch.x - player.x, ch.y - player.y) < 16 && (I.pressed('KeyE') || I.pressed('Enter'))) {
           chests.splice(i, 1);
           if (Math.random() < 0.45) { PQ.sfx('error'); player.hurt = 1; stealTD(15, 'FIRMWARE MIMIC BRICKED YOUR GEAR'); }
-          else { const n = PQ.pick([10, 10, 20]); st.td += n; st.earned += n; PQ.sfx('cash'); OW.toast('STABLE FIRMWARE! +' + n + ' TD', C.green); OW.burstBills(n); }
+          else { const n = PQ.pick([10, 10, 20]); st.td += n; st.earned += n; PQ.sfx('cash'); OW.toast('STABLE FIRMWARE! +' + n + ' T$', C.green); OW.burstBills(n); }
           return;
         }
       }

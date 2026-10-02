@@ -1,6 +1,6 @@
-# Packet Quest: The TekDollar Run
+# Packet Quest: The Tech$$$ Run
 
-**Mission:** 8-bit top-down network-engineer adventure where you close tickets via mini-games to earn TekDollars, rank up, and beat The Great Outage.
+**Mission:** 8-bit top-down network-engineer adventure where you close tickets via mini-games to earn Tech$$$, rank up, and beat The Great Outage.
 
 ## Stack / architecture
 - Vanilla JS + HTML5 Canvas 2D. No build step, no dependencies. Open `index.html` directly (works from `file://`).
@@ -40,7 +40,7 @@ Draw: `PQ.C.<color>`, `PQ.text(g,s,x,y,col,{size,align})`, `PQ.rect(g,x,y,w,h,co
 
 ## Conventions
 - camelCase JS, 2-space indent, `'use strict'` IIFE per file.
-- Palette only from `PQ.C` (16-color TekDollar blue set).
+- Palette only from `PQ.C` (16-color Tech$$$ blue set).
 - Numbers live in `js/config.js`, not scattered in code.
 
 ## Non-goals

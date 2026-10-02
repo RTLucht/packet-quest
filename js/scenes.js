@@ -182,7 +182,7 @@
           PQ.text(g, String(l[1]), 290, 50 + i * 13, C.yellow, { size: 6, align: 'right' });
         });
         PQ.drawBill(g, 104, 126, 112, 50, rep.pay >= 100 ? 100 : rep.pay >= 50 ? 50 : rep.pay >= 20 ? 20 : 10, Math.sin(t * 2) * 0.05);
-        PQ.text(g, '+' + shown + ' TD', 160, 184, C.yellow, { align: 'center', size: 12 });
+        PQ.text(g, '+' + shown + ' T$', 160, 184, C.yellow, { align: 'center', size: 12 });
         if (rep.quote) PQ.text(g, rep.quote, 160, 202, C.cyan, { align: 'center', size: 6 });
         if (rep.rankUp && blink(4)) PQ.text(g, 'RANK UP: ' + rep.rankUp.toUpperCase(), 160, 114, C.yellow, { align: 'center', size: 6 });
         PQ.text(g, 'ENTER', 290, 212, blink() ? C.white : C.dgrey, { size: 6, align: 'right' });
@@ -250,7 +250,7 @@
             PQ.text(g, '#' + tk.id + ' ' + PQ.minigames[tk.game].title, 30, y + 4, C.white, { size: 6 });
             PQ.text(g, PQ.siteById(tk.siteId).name + '  L' + tk.level + '  SLA ' + PQ.fmtTime(tk.sla), 30, y + 13, C.ice, { size: 6 });
             PQ.text(g, '"' + (tk.desc.length > 42 ? tk.desc.slice(0, 40) + '..' : tk.desc) + '"', 30, y + 22, C.grey, { size: 6, shadow: false });
-            PQ.text(g, tk.payout + ' TD', 300, y + 4, C.yellow, { size: 6, align: 'right' });
+            PQ.text(g, tk.payout + ' T$', 300, y + 4, C.yellow, { size: 6, align: 'right' });
           } else if (it.kind === 'abandon') {
             const tk = s.active;
             PQ.text(g, 'ACTIVE #' + tk.id + ' ' + PQ.minigames[tk.game].title, 22, y + 5, C.yellow, { size: 6 });
@@ -301,7 +301,7 @@
         if (COSMETIC.includes(it.id) && x.cosmetics.includes(it.id)) { s.wearing = s.wearing === it.id ? null : it.id; PQ.sfx('select'); msg = { s: s.wearing ? 'NOW WEARING: ' + it.name : 'UNEQUIPPED', t: 1.5 }; PQ.save(); return; }
         if (owned(it)) { PQ.sfx('error'); msg = { s: 'ALREADY MAXED', t: 1.2 }; return; }
         if (locked(it)) { PQ.sfx('error'); msg = { s: 'NEED THE PREVIOUS CERT FIRST', t: 1.5 }; return; }
-        if (s.td < it.price) { PQ.sfx('error'); msg = { s: 'NOT ENOUGH TEKDOLLARS', t: 1.2 }; return; }
+        if (s.td < it.price) { PQ.sfx('error'); msg = { s: 'NOT ENOUGH TECH$$$', t: 1.2 }; return; }
         s.td -= it.price;
         if (it.id === 'reach') x.reach = true;
         else if (it.id === 'mug') x.mugs++;
@@ -330,7 +330,7 @@
           const col = it.id === 'exit' ? C.ice : own ? C.green : lock ? C.dgrey : s.td >= it.price ? C.white : C.grey;
           PQ.text(g, it.name, 16, y + 2, col, { size: 6 });
           if (it.id !== 'exit') {
-            let tag = it.price + ' TD';
+            let tag = it.price + ' T$';
             if (it.id === 'mug') tag = s.items.mugs + '/3  ' + tag;
             if (it.id === 'drone' && s.items.drone) tag = s.items.drone + 'CHG  ' + tag;
             if (own) tag = COSMETIC.includes(it.id) ? (s.wearing === it.id ? 'WEARING' : 'OWNED') : it.id === 'mug' || it.id === 'drone' ? 'FULL' : 'OWNED';
@@ -397,7 +397,7 @@
         PQ.text(g, b.name, 160, 158, C.yellow, { align: 'center', size: 12 });
         PQ.text(g, '"' + b.taunt + '"', 160, 178, C.ice, { align: 'center', size: 6 });
         PQ.text(g, id === 'outage' ? 'TRIAGE 4 SITES, THEN FIND THE ROOT CAUSE' : b.phases.length + ' PHASES.  2 FAILS = RETREAT', 160, 194, C.grey, { align: 'center', size: 6 });
-        PQ.text(g, 'REWARD ' + b.reward + ' TD', 160, 206, C.yellow, { align: 'center', size: 6 });
+        PQ.text(g, 'REWARD ' + b.reward + ' T$', 160, 206, C.yellow, { align: 'center', size: 6 });
         if (t > 0.6) PQ.text(g, 'ENTER = FIGHT   ESC = NOT TODAY', 160, 222, blink() ? C.white : C.cyan, { align: 'center', size: 6 });
       },
     };
@@ -594,7 +594,7 @@
       const y = y0 + 20 + i * 14;
       PQ.text(g, (i + 1) + '. ' + e.name, 28, y, i === 0 ? C.yellow : C.ice, { size: 6 });
       PQ.text(g, e.rank, 190, y, C.grey, { size: 6, align: 'center' });
-      PQ.text(g, e.earned + ' TD', 292, y, C.green, { size: 6, align: 'right' });
+      PQ.text(g, e.earned + ' T$', 292, y, C.green, { size: 6, align: 'right' });
     });
     PQ.text(g, 'ENTER = BACK', 160, y0 + 186, C.dgrey, { align: 'center', size: 6 });
   }
@@ -647,8 +647,8 @@
         PQ.text(g, 'IS RESOLVED', 160, 114, C.green, { align: 'center', size: 10 });
         PQ.text(g, 'YOU ARE NOW', 160, 136, C.ice, { align: 'center', size: 6 });
         PQ.text(g, 'PRINCIPAL OF THE PACKET REALM', 160, 148, blink(3) ? C.yellow : C.orange, { align: 'center', size: 8 });
-        PQ.text(g, 'ROOT CAUSE FOUND IN ' + dnsT.toFixed(1) + 's  +' + reward + ' TD', 160, 166, C.cyan, { align: 'center', size: 6 });
-        PQ.text(g, 'LIFETIME ' + s.earned + ' TD  TICKETS ' + s.closed + '  DNS ' + s.dnsUses, 160, 180, C.ice, { align: 'center', size: 6 });
+        PQ.text(g, 'ROOT CAUSE FOUND IN ' + dnsT.toFixed(1) + 's  +' + reward + ' T$', 160, 166, C.cyan, { align: 'center', size: 6 });
+        PQ.text(g, 'LIFETIME ' + s.earned + ' T$  TICKETS ' + s.closed + '  DNS ' + s.dnsUses, 160, 180, C.ice, { align: 'center', size: 6 });
         PQ.text(g, 'PLAY TIME ' + PQ.fmtTime(s.playTime), 160, 192, C.ice, { align: 'center', size: 6 });
         if (t > 2) PQ.text(g, 'ENTER = SIGN THE LEADERBOARD', 160, 216, blink() ? C.white : C.cyan, { align: 'center', size: 6 });
       },
@@ -671,13 +671,13 @@
       'You are a junior network engineer.',
       'Take tickets at HQ, walk to the site,',
       'solve the mini-game before the SLA',
-      'runs out. Earn TEKDOLLARS. Rank up.',
+      'runs out. Earn TECH$$$. Rank up.',
       '',
       'ARROWS/WASD move    SHIFT run',
       'E/ENTER interact    SPACE zap',
       'C coffee   P ack pager   M mute',
       '',
-      'Spend TD at the Supply Depot.',
+      'Spend T$ at the Supply Depot.',
       'Beat 3 bosses, then The Great Outage.',
       'Stuck in a puzzle? Something small',
       'may appear in the top-right corner...',
@@ -712,7 +712,7 @@
         if (view === 'board') { PQ.box(g, 12, 12, 296, 216); drawBoard(g, 24); return; }
         [100, 50, 20, 10].forEach((d, i) => PQ.drawBill(g, 22 + i * 50, 14 + Math.sin(t * 1.5 + i) * 3, 110, 50, d, -0.42 + i * 0.1));
         PQ.text(g, 'PACKET QUEST', 160, 84, C.white, { align: 'center', size: 20 });
-        PQ.text(g, 'THE TEKDOLLAR RUN', 160, 112, C.cyan, { align: 'center', size: 10 });
+        PQ.text(g, 'THE TECH$$$ RUN', 160, 112, C.cyan, { align: 'center', size: 10 });
         menu.forEach((m, i) => PQ.text(g, (i === sel ? '> ' : '  ') + m, 100, 150 + i * 16, i === sel ? C.yellow : C.ice));
         PQ.text(g, 'A NETWORK ENGINEERING ADVENTURE', 160, 224, C.grey, { align: 'center', size: 6 });
       },

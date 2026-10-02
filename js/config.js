@@ -34,7 +34,7 @@
     pagerPenalty: 15,
     pagerSites: ['P1: ED badge readers down', 'P2: Pharmacy label printer', 'P1: MRI VLAN flapping', 'P3: Guest Wi-Fi slow', 'P1: Core link CRC errors', 'P2: Nurse call system offline'],
 
-    // Ranks by lifetime TekDollars earned (Principal also needs The Great Outage beaten)
+    // Ranks by lifetime Tech$$$ earned (Principal also needs The Great Outage beaten)
     ranks: [
       { name: 'Tier 1 Tech', at: 0 },
       { name: 'Field Engineer', at: 150 },
@@ -49,7 +49,7 @@
       { id: 'mug', name: 'COFFEE MUG', price: 15, desc: 'C = full stamina. Stacks to 3.' },
       { id: 'label', name: 'GOLDEN LABEL MAKER', price: 120, desc: 'Closed sites get documented: +25% pay there. The Auditor cares.' },
       { id: 'cert1', name: 'CERT SCROLL: CCNA', price: 80, desc: 'Unlocks Packet Tracer, Config Commit, Rogue AP tickets.' },
-      { id: 'cert2', name: 'CERT SCROLL: CCNP', price: 200, desc: 'Unlocks Spanning Tree Siege tickets (100 TD).' },
+      { id: 'cert2', name: 'CERT SCROLL: CCNP', price: 200, desc: 'Unlocks Spanning Tree Siege tickets (100 T$).' },
       { id: 'cert3', name: 'CERT SCROLL: CCIE', price: 400, desc: '+10% on ticket pay. Needed to face The Great Outage.' },
       { id: 'drone', name: 'AI SIDEKICK DRONE', price: 500, desc: '3 charges. D on a mission intro = auto-solve.' },
       { id: 'hat', name: 'HARD HAT', price: 25, desc: 'Cosmetic. Safety first.' },

@@ -85,7 +85,7 @@
         PQ.sfx('coin');
         PQ.state.td += PQ.CFG.pagerBonus; PQ.state.earned += PQ.CFG.pagerBonus;
         this.pager = null;
-        this.toast = { s: 'PAGE ACKED +' + PQ.CFG.pagerBonus + ' TD', t: 1.5 };
+        this.toast = { s: 'PAGE ACKED +' + PQ.CFG.pagerBonus + ' T$', t: 1.5 };
       } else if (this.pager.t <= 0) {
         if (tk) tk.slaLeft -= PQ.CFG.pagerPenalty;
         PQ.sfx('error');
@@ -147,7 +147,7 @@
       else if (this.opts.bossName) PQ.text(g, this.opts.bossName, 160, 52, C.red, { align: 'center' });
       PQ.text(g, 'LEVEL ' + (this.opts.level || 1), 160, 64, C.grey, { align: 'center' });
       (d.help || []).forEach((line, i) => PQ.text(g, line, 26, 82 + i * 12, C.ice));
-      if (tk) PQ.drawTD(g, 26, 172, 'PAYOUT ' + tk.payout + ' TD');
+      if (tk) PQ.drawTD(g, 26, 172, 'PAYOUT ' + tk.payout + ' T$');
       PQ.text(g, 'ENTER / CLICK = START', 160, 192, Math.floor(this.t * 3) % 2 ? C.white : C.cyan, { align: 'center' });
       if (this.opts.canDrone) PQ.text(g, 'D = SEND AI DRONE', 160, 206, C.green, { align: 'center' });
       PQ.text(g, 'ESC = BAIL', 296, 218, C.grey, { align: 'right', size: 6 });

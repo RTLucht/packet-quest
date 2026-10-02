@@ -1,12 +1,12 @@
 > Grok design brief (2026-10-01). Numbers/ideas adopted into js/config.js. File layout section is superseded by CLAUDE.md.
 
-# PACKET QUEST: The TekDollar Run — build contract
+# PACKET QUEST: The Tech$$$ Run — build contract
 
 Vanilla JS + Canvas. No build step, no ES modules, no CDN, no webfont. Double-click `index.html` must work on `file://`.
 
 ```
 index.html
-tekdollars.png          (only bitmap; shop header + payout popup)
+(no bitmaps; bills are drawn in code)
 css/game.css
 js/data.js              (map, tips, config bank, prices, palette)
 js/audio.js
@@ -33,11 +33,11 @@ Ship all 7. Each round is about 45–80s. Level is not a menu: `level = clamp(1 
 
 ### Shared shell
 
-HUD on every puzzle: mission name, inner bar, outer SLA seconds, lives, stamina, TD. Esc pauses. Click or the keys below both work. 3 lives. Puzzle fail: pay 0, lives −1, ticket cancelled, dumped on that site's mat. 0 lives: warp to `(6,9)`, lives = 3, `cash = floor(cash * 0.9)`, ticket dropped.
+HUD on every puzzle: mission name, inner bar, outer SLA seconds, lives, stamina, T$. Esc pauses. Click or the keys below both work. 3 lives. Puzzle fail: pay 0, lives −1, ticket cancelled, dumped on that site's mat. 0 lives: warp to `(6,9)`, lives = 3, `cash = floor(cash * 0.9)`, ticket dropped.
 
 **It was DNS.** A 46×14 button, bottom-right, palette slot 15, label `DNS?`. Hidden until 2 strikes or 20s with no board change, then it lights (slot 10). Key `F` or click. Clears the current puzzle or boss phase. Pay for a normal ticket becomes **exactly 1**. Trombone. Counts as a close for unlock counters. CCIE does not multiply it. Drone and DNS cannot both be used on the same phase.
 
-**Pager.** While a non-boss ticket is open, arm once at random 40–70s. Beep + banner `ACK THE PAGE` for 8s. `P` acks: **+5 TD**. Miss: outer SLA −15s. No page if SLA left < 20s. No page on bosses.
+**Pager.** While a non-boss ticket is open, arm once at random 40–70s. Beep + banner `ACK THE PAGE` for 8s. `P` acks: **+5 T$**. Miss: outer SLA −15s. No page if SLA left < 20s. No page on bosses.
 
 ### Payout (every normal ticket)
 
@@ -64,7 +64,7 @@ Drone success pays `raw` (bonus 0, SLA not breached), then the CCIE ×1.1. Bosse
 
 Outer SLA by urgency: **green 150s, yellow 110s, red 85s.** Inner clocks below are shorter than red on purpose.
 
-### Cable Chaos — 10 TD
+### Cable Chaos — 10 T$
 
 Pipe tiles on a grid. Each tile is a 4-bit mask, N=1 E=2 S=4 W=8. Types: straight and corner. L2+ adds one T. Source is the west edge of `(0, mid)`. Sink is the east edge of `(cols-1, mid)`. All tiles start randomly rotated.
 
@@ -79,7 +79,7 @@ Flow is **recomputed from the source every frame** through matching ports (no ma
 Controls: arrows / WASD move the cursor. Space or left-click rotates CW. `R` or right-click rotates CCW.
 Win: sink connected. Lose: heat hits 100 (life −1).
 
-### AP Placement — 20 TD
+### AP Placement — 20 T$
 
 Floorplan grid. Cells: wall, floor, void. Click a floor cell to place or pick up an AP. Coverage = BFS through floor (walls block) up to R steps. Must-cover = every floor cell. Submit with Enter.
 
@@ -94,7 +94,7 @@ Controls: click toggle, or arrows + Space. `Z` lifts the last AP. Enter submits.
 Win: every must-cover cell covered, no forbidden cell covered, APs used ≤ budget.
 Lose: inner timer 0, or 3 bad submits (a bad submit is a strike, not a life, until the third).
 
-### VLAN Sorter — 20 TD
+### VLAN Sorter — 20 T$
 
 One device falls in the center. Four buckets along the bottom. Steer the highlight before it lands.
 
@@ -116,7 +116,7 @@ A miss is a strike. Down / Space drops the device now. Round length is the conte
 Controls: Left/Right or A/D move the highlight. Keys `1`–`4` snap to a bucket. Click a bucket.
 Win: queue empty and misses ≤ limit. Lose: misses over the limit, or backstop.
 
-### Packet Tracer Run — 50 TD
+### Packet Tracer Run — 50 T$
 
 Not a platformer. Three lanes, the packet stays at x=80, the world scrolls left. No gravity.
 
@@ -133,7 +133,7 @@ Start TTL = max. Inner clock = the scroll duration; also fail instantly at TTL 0
 Controls: Up/Down or W/S change lane, clamped 0..2. Click a lane to move there. No left/right.
 Win: last obstacle scrolls off and TTL > 0. Lose: TTL 0.
 
-### Config Commit — 50 TD
+### Config Commit — 50 T$
 
 Ticket banner is one line and is the spec. Body is 8–16 monospace lines. Exactly one token is wrong, and it contradicts the banner. Flag that token.
 
@@ -159,7 +159,7 @@ Hardcode these 8. L1 draws from 1–4, banner restates the bad idea in plain wor
 Controls: Up/Down lines, Left/Right tokens, Enter flags. Click a word to flag it.
 Win: the bad token. Lose: strikes exhausted, or inner timer 0 (rollback). Either is a life.
 
-### Rogue AP Hunt — 50 TD
+### Rogue AP Hunt — 50 T$
 
 Room of floor and wall. Rogue is hidden. RSSI `= -30 - (manhattan * 7)`, drawn as a number. Beep interval `= 160 + manhattan * 120` ms, square 880 Hz, 40 ms, gain 0.08. Walls block walking and guard vision. Walls do **not** change RSSI.
 
@@ -175,7 +175,7 @@ Guards patrol a polyline loop, one tile every 600ms. Vision = the next 2 tiles i
 Controls: WASD / arrows step. E captures. Click an adjacent floor tile to step there.
 Win: capture. Lose: 2 alarms, or inner timer 0.
 
-### Spanning Tree Siege — 100 TD
+### Spanning Tree Siege — 100 T$
 
 Nodes and edges drawn as a graph, not creeps. Click an edge to toggle BLOCK. After every toggle, test the open graph:
 
@@ -283,9 +283,9 @@ Change Window Phantom and Firmware Mimic are not in this build. The pager is the
 
 ## 3. Economy
 
-Lifetime TD (sum of pays, never reduced by spending) sets rank. Cash is the wallet.
+Lifetime T$ (sum of pays, never reduced by spending) sets rank. Cash is the wallet.
 
-| Rank | Lifetime TD | HUD |
+| Rank | Lifetime T$ | HUD |
 |---|---|---|
 | Tier 1 Tech | 0 | T1 |
 | Field Engineer | 150 | FE |
@@ -294,7 +294,7 @@ Lifetime TD (sum of pays, never reduced by spending) sets rank. Cash is the wall
 | Architect | 1500 | AR |
 | Principal of the Packet Realm | 2500 **and** Great Outage won | PR |
 
-A cheese path (DNS = 1 TD plus the four boss flats 100+200+350+1000) tops out near 1700 and does **not** make Principal. Do not "fix" that.
+A cheese path (DNS = 1 T$ plus the four boss flats 100+200+350+1000) tops out near 1700 and does **not** make Principal. Do not "fix" that.
 
 Shop list. Up/Down, Enter buys, Esc closes. Can't afford: row in slot 15, Enter buzzes (square 110 Hz, 80 ms).
 
@@ -408,7 +408,7 @@ DNS and the pager are specified in §1. Both are in the MVP, not polish.
 
 ## 6. 8-bit look and sound
 
-16 colors. Sampled off `tekdollars.png` (the art clusters at `#102050`, `#204080`, `#305090`, `#5070b0`). Gold and the status colors are added so a bill-blue game stays readable. Index order is the NES order; do not reorder.
+16 colors. Sampled off the original bill art (the art clusters at `#102050`, `#204080`, `#305090`, `#5070b0`). Gold and the status colors are added so a bill-blue game stays readable. Index order is the NES order; do not reorder.
 
 | # | Hex | Use |
 |---|---|---|
@@ -419,7 +419,7 @@ DNS and the pager are specified in §1. Both are in the MVP, not polish.
 | 4 | `#7EC8E3` | cyan highlight, binary rain, live path |
 | 5 | `#E7EEF8` | text |
 | 6 | `#8EADD4` | shaded floor |
-| 7 | `#D8B15A` | gold, TD, the 100 |
+| 7 | `#D8B15A` | gold, T$, the 100 |
 | 8 | `#2FCE7A` | SLA safe, coverage, win |
 | 9 | `#E0A106` | yellow urgency, telegraph |
 | 10 | `#D64545` | red urgency, storm, fail |
@@ -470,10 +470,10 @@ Shop buzz: square 110 Hz, 80ms, gain 0.08.
 
 Build these only after Loopmaster is winnable. Each is data plus a few branches.
 
-1. **Firmware Mimic crate.** Shop row, 10 TD. 70%: a sticker, no stat, title prefix `STICKER`. 30%: lose 25 TD and the banner `it was a firmware mimic`. One random roll.
+1. **Firmware Mimic crate.** Shop row, 10 T$. 70%: a sticker, no stat, title prefix `STICKER`. 30%: lose 25 T$ and the banner `it was a firmware mimic`. One random roll.
 2. **Flavor line on the ticket.** A 20-string table keyed by mission (`users say Wi-Fi died when the microwave moved` → AP or Rogue). Drawn under the payout. No new rules.
 3. **Clean-close chain.** HUD number. 3 ticket wins in a row with no fail and no DNS: the third pay ×1.25 after CCIE, `floor`. Any fail, DNS, or abandon resets to 0.
-4. **Close line.** On a real win, one sentence from the rule you just used, under the TD count. Examples: `A tree has N-1 links.` / `The icon was right. The sticky was lying.` / `Ethernet has no TTL. The ACL was the wall.` String table, ~15 lines, keyed by mission.
+4. **Close line.** On a real win, one sentence from the rule you just used, under the T$ count. Examples: `A tree has N-1 links.` / `The icon was right. The sticky was lying.` / `Ethernet has no TTL. The ACL was the wall.` String table, ~15 lines, keyed by mission.
 5. **Repeat the break.** The mission you last failed gets +1 weight in the terminal roller until you close one of that mission. One integer in the save.
 
 ---
