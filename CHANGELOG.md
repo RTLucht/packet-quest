@@ -1,0 +1,14 @@
+# Changelog
+
+## [0.1.0] - 2026-10-01
+
+### Added
+- Core engine: 320x240 pixel canvas, WebAudio chiptune music and SFX, input, scenes, localStorage save.
+- Overworld "The Enterprise": hub (HQ, Supply Depot, NOC), three worlds gated by rank, data-stream rivers, day/night clock.
+- Enemies: Gremlins, Interference Ghost, Shadow IT Slime, Change Window Phantom, Firmware Mimic chests.
+- Ticket system: urgency, SLA timer, speed bonus, clean-close streak, lives and burnout.
+- Seven mini-games: Cable Chaos, AP Placement, Config Commit (Claude); VLAN Sorter, Packet Tracer Run, Rogue AP Hunt, Spanning Tree Siege (Codex).
+- Supply Depot with certs, tools, AI drone, cosmetics.
+- Bosses: The Loopmaster, Lord BGP Flap, The Auditor (documentation check), The Great Outage (triage board + DNS finale).
+- "It was DNS" button, on-call pager, loading-screen networking tips, local leaderboard.
+- Economy, tips, and boss design from Grok's design brief.

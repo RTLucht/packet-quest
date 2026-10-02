@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Packet Quest: The TekDollar Run</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; height: 100%; background: #050a1e; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; cursor: crosshair; }
+  #docs { position: fixed; right: 8px; bottom: 6px; font: 10px monospace; }
+  #docs a { color: #4a7ae8; margin-left: 10px; text-decoration: none; }
+  #docs a:hover { color: #7ad0ff; }
+</style>
+</head>
+<body>
+<canvas id="game" width="320" height="240"></canvas>
+<div id="docs"><a href="README.md" target="_blank">README</a><a href="CHANGELOG.md" target="_blank">CHANGELOG</a></div>
+<script src="js/core.js"></script>
+<script src="js/config.js"></script>
+<script src="js/minigame-host.js"></script>
+<script src="js/minigames/cable.js"></script>
+<script src="js/minigames/ap.js"></script>
+<script src="js/minigames/vlan.js"></script>
+<script src="js/minigames/tracer.js"></script>
+<script src="js/minigames/config.js"></script>
+<script src="js/minigames/rogue.js"></script>
+<script src="js/minigames/stp.js"></script>
+<script src="js/overworld.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Packet Quest - Mini-game Dev Harness</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: #050a1e; color: #c8ecff; font-family: monospace; }
+  canvas { display: block; margin: 8px auto; image-rendering: pixelated; width: 960px; height: 720px; max-width: 100vw; max-height: 85vh; object-fit: contain; }
+  #bar { text-align: center; padding: 6px; }
+  #bar button { margin: 2px; }
+</style>
+</head>
+<body>
+<div id="bar">Mini-game: <span id="list"></span> | level <select id="lvl"><option>1</option><option>2</option><option>3</option></select> <label><input type="checkbox" id="boss"> boss</label></div>
+<canvas id="c" width="320" height="240"></canvas>
+<script src="js/core.js"></script>
+<script src="js/config.js"></script>
+<script src="js/minigame-host.js"></script>
+<script src="js/minigames/cable.js"></script>
+<script src="js/minigames/ap.js"></script>
+<script src="js/minigames/vlan.js"></script>
+<script src="js/minigames/tracer.js"></script>
+<script src="js/minigames/config.js"></script>
+<script src="js/minigames/rogue.js"></script>
+<script src="js/minigames/stp.js"></script>
+<script>
+(function () {
+  const PQ = window.PQ;
+  PQ.state = PQ.newState();
+  const canvas = document.getElementById('c'), g = canvas.getContext('2d');
+  g.imageSmoothingEnabled = false;
+  PQ.bindMouse(canvas);
+  const idle = { update() {}, draw(g) { PQ.rect(g, 0, 0, 320, 240, PQ.C.black); PQ.text(g, 'PICK A MINI-GAME ABOVE', 160, 112, PQ.C.cyan, { align: 'center' }); } };
+  PQ.setScene(idle);
+  function run(id) {
+    PQ.audio.unlock();
+    const level = +document.getElementById('lvl').value, boss = document.getElementById('boss').checked;
+    const ticket = boss ? null : { site: { name: 'DEV SITE' }, desc: 'test ticket', payout: PQ.minigames[id].payout, sla: 120, slaLeft: 120 };
+    PQ.runMinigame({ id, level, boss, bossName: boss ? 'TEST BOSS' : null, ticket, canDrone: true,
+      onDone(r) { console.log('[PQ] result', id, JSON.stringify(r)); PQ.setScene(idle); } });
+  }
+  const list = document.getElementById('list');
+  Object.keys(PQ.minigames).forEach((id) => {
+    const b = document.createElement('button'); b.textContent = id; b.onclick = () => { b.blur(); run(id); }; list.appendChild(b);
+  });
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    PQ.scene.update(dt); PQ.scene.draw(g, dt); PQ.input.endFrame();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
