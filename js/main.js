@@ -3,8 +3,9 @@
   'use strict';
   const PQ = window.PQ;
   const canvas = document.getElementById('game');
+  canvas.width = PQ.W * PQ.SCALE;
+  canvas.height = PQ.H * PQ.SCALE;
   const g = canvas.getContext('2d');
-  g.imageSmoothingEnabled = false;
   PQ.bindMouse(canvas);
   PQ.state = PQ.load() || PQ.newState();
 
@@ -24,6 +25,8 @@
     last = now;
     PQ.time += dt;
     if (PQ.input.pressed('KeyM')) PQ.audio.toggleMute();
+    g.setTransform(PQ.SCALE, 0, 0, PQ.SCALE, 0, 0);
+    g.imageSmoothingEnabled = false;
     try {
       PQ.scene.update(dt);
       PQ.scene.draw(g, dt);

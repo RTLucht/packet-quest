@@ -91,7 +91,7 @@
       const limit = [60, 55, 50][lvl - 1] + (api.boss ? 15 : 0);
       const scrollSpeed = [6, 9, 12][lvl - 1];
       const lines = build(nTypos);
-      const LH = 9, VIEW_Y = 40, VIEW_H = 168, VISIBLE = Math.floor(VIEW_H / LH);
+      const LH = 12, VIEW_Y = 40, VIEW_H = 168, VISIBLE = Math.floor(VIEW_H / LH);
       let scroll = 0, sel = 0, lives = 3, found = 0, t = 0, done = false, shake = 0, msg = null, autoScroll = true;
       const maxScroll = Math.max(0, lines.length * LH - VIEW_H);
 
@@ -165,8 +165,8 @@
             if (l.wrong) PQ.rect(g, 8, y - 1, 304, LH, C.red);
             const s = l.typo ? (l.found ? l.good : l.bad) : l.good;
             const col = l.found ? C.green : s === '!' ? C.dgrey : /^\S/.test(s) ? C.cyan : C.ice;
-            PQ.text(g, String(i + 1).padStart(2, ' '), 10, y, C.dgrey, { size: 6, shadow: false });
-            PQ.text(g, s, 26, y, col, { size: 6, shadow: false });
+            PQ.text(g, String(i + 1).padStart(2, ' '), 10, y + 1, C.grey, { size: 9, font: PQ.MONO, shadow: false });
+            PQ.text(g, s, 26, y + 1, col, { size: 10, font: PQ.MONO, shadow: false });
             if (l.found) PQ.text(g, 'OK', 306, y, C.green, { size: 6, align: 'right', shadow: false });
           }
           g.restore();

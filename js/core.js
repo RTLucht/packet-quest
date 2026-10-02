@@ -146,11 +146,13 @@
 
   // ---- Draw helpers ----
   PQ.FONT = '"Press Start 2P", monospace';
+  PQ.MONO = 'Consolas, "Courier New", monospace'; // readable terminal text
+  PQ.SCALE = 3; // backing-store multiplier: logic stays 320x240, text renders crisp
   PQ.rect = (g, x, y, w, h, c) => { g.fillStyle = c; g.fillRect(Math.round(x), Math.round(y), Math.round(w), Math.round(h)); };
   PQ.stroke = (g, x, y, w, h, c) => { g.strokeStyle = c; g.lineWidth = 1; g.strokeRect(Math.round(x) + 0.5, Math.round(y) + 0.5, Math.round(w) - 1, Math.round(h) - 1); };
   PQ.text = function (g, s, x, y, col, opt) {
     opt = opt || {};
-    g.font = (opt.size || 8) + 'px ' + PQ.FONT;
+    g.font = (opt.size || 8) + 'px ' + (opt.font || PQ.FONT);
     g.textAlign = opt.align || 'left';
     g.textBaseline = 'top';
     if (opt.shadow !== false) { g.fillStyle = PQ.C.black; g.fillText(s, Math.round(x) + 1, Math.round(y) + 1); }

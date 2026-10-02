@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1] - 2026-10-02
+
+### Changed
+- Config Commit uses a readable monospace font (Consolas) at a larger size.
+- Canvas renders at 3x backing resolution so all text is crisp; game logic stays 320x240.
+
 ## [0.1.0] - 2026-10-01
 
 ### Added
