@@ -1,12 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Packet Quest: The Tech$$$ Run</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="description" content="Free 8-bit browser adventure for network engineers: close tickets with networking mini-games before The Great Outage.">
+<link rel="canonical" href="https://serverroomarcade.com/play/packet-quest/">
+<link rel="preload" href="fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family: "Press Start 2P"; src: url(fonts/press-start-2p.woff2) format("woff2"); font-display: swap; }
   html, body { margin: 0; height: 100%; background: #050a1e; overflow: hidden; }
   body { display: flex; align-items: center; justify-content: center; }
   canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; cursor: crosshair; }
@@ -17,7 +19,7 @@
 </head>
 <body>
 <canvas id="game" width="320" height="240"></canvas>
-<div id="docs"><a href="https://serverroomarcade.com/">ALL GAMES</a><a href="README.md" target="_blank">README</a><a href="CHANGELOG.md" target="_blank">CHANGELOG</a></div>
+<div id="docs"><a href="https://serverroomarcade.com/">ALL GAMES</a><a href="https://serverroomarcade.com/packet-quest/">GUIDE</a><a href="https://github.com/RTLucht/packet-quest/blob/main/CHANGELOG.md">CHANGELOG</a></div>
 <script src="js/core.js"></script>
 <script src="js/config.js"></script>
 <script src="js/minigame-host.js"></script>
