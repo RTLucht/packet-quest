@@ -34,7 +34,7 @@ Open `index.html` in a browser. No install, no build, no server. Progress saves 
 | Cable Chaos | Rotate patch-cable tiles to connect ports before the closet overheats. Swat gremlins. | 10 |
 | AP Placement | Place APs so the coverage heatmap is green with no dead zones. Walls and the MRI suite eat signal. | 20 |
 | VLAN Sorter | Devices fall; drop each into the right VLAN bucket. | 20 |
-| Packet Tracer Run | Side-scroller: you are the packet. Jump ACL walls, keep your TTL up. | 50 |
+| TTL Run | Side-scroller: you are the packet. Jump ACL walls, keep your TTL up. | 50 |
 | Config Commit | Find the typos in a scrolling IOS config before it commits. Wrong flag = rollback. | 50 |
 | Rogue AP Hunt | Stealth: follow the RF meter to the rogue AP, avoid patrols. | 50 |
 | Spanning Tree Siege | Block links until the topology is a loop-free spanning tree before the storm melts it. | 100 |
@@ -58,3 +58,11 @@ Open `index.html` in a browser. No install, no build, no server. Progress saves 
 - `dev.html` is a harness that launches any mini-game at any level or in boss mode.
 - Architecture and the mini-game contract are in `CLAUDE.md`. Tunable numbers are in `js/config.js`.
 - Grok's original design brief is in `docs/grok-design-brief.md`.
+
+## Copyright and trademarks
+
+© 2026 Richard Lucht. All rights reserved. The source is published so you can read how the game works; no license to copy, modify or redistribute it is granted.
+
+CCNA, CCNP and CCIE are trademarks of Cisco Systems, Inc. and/or its affiliates. PowerShell, Teams and Exchange are trademarks of the Microsoft group of companies. This game is an independent project, not sponsored by, endorsed by or affiliated with any of these companies, and it does not grant or prepare you for any certification.
+
+Part of [Server Room Arcade](https://serverroomarcade.com).

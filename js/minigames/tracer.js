@@ -2,7 +2,7 @@
   'use strict';
   const PQ = window.PQ, C = PQ.C;
   PQ.registerMinigame({
-    id: 'tracer', title: 'PACKET TRACER RUN', payout: 50,
+    id: 'tracer', title: 'TTL RUN', payout: 50,
     help: [
       'Your packet runs to 10.0.0.53.',
       'UP / W / SPACE: jump; hold higher.',

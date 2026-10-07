@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1] - 2026-10-07
+
+### Changed
+- Renamed the Packet Tracer Run mini-game to TTL Run (Packet Tracer is a Cisco product name).
+- README: copyright notice (all rights reserved) and trademark disclaimer.
+
 ## [0.2.0] - 2026-10-06
 
 ### Changed

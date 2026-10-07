@@ -49,7 +49,7 @@
       { id: 'mug', name: 'COFFEE MUG', price: 15, desc: 'C = full stamina. Stacks to 3.' },
       { id: 'label', name: 'GOLDEN LABEL MAKER', price: 120, desc: 'Closed sites get documented: +25% pay there. The Auditor cares.' },
       { id: 'cert1', name: 'CERT SCROLL: CCNA', price: 80, desc: 'Unlocks AP Placement and Config Commit tickets.' },
-      { id: 'cert2', name: 'CERT SCROLL: CCNP', price: 200, desc: 'Unlocks Packet Tracer and Rogue AP tickets.' },
+      { id: 'cert2', name: 'CERT SCROLL: CCNP', price: 200, desc: 'Unlocks TTL Run and Rogue AP tickets.' },
       { id: 'cert3', name: 'CERT SCROLL: CCIE', price: 400, desc: 'Unlocks Spanning Tree Siege (100 T$). +10% pay. Needed for The Great Outage.' },
       { id: 'drone', name: 'AI SIDEKICK DRONE', price: 500, desc: '3 charges. D on a mission intro = auto-solve.' },
       { id: 'hat', name: 'HARD HAT', price: 25, desc: 'Cosmetic. Safety first.' },
