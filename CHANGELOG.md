@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0] - 2026-10-06
+
+### Changed
+- Mini-games now unlock across all three cert scrolls, like Uptime Quest. Free: Cable Chaos, VLAN Sorter. CCNA: AP Placement, Config Commit. CCNP: Packet Tracer, Rogue AP. CCIE: Spanning Tree Siege (plus +10% pay). Existing saves keep their certs; some ticket types now need a higher cert.
+- Tech$$$ bills recolored teal and amber to match the Server Room Arcade site.
+
 ## [0.1.2] - 2026-10-02
 
 ### Changed

@@ -26,7 +26,7 @@
     burnoutTax: 0.1,
 
     // missions unlocked by cert level (0 = none, 1 = CCNA, 2 = CCNP, 3 = CCIE)
-    missionsByCert: [['cable', 'ap', 'vlan'], ['tracer', 'config', 'rogue'], ['stp']],
+    missionsByCert: [['cable', 'vlan'], ['ap', 'config'], ['tracer', 'rogue'], ['stp']],
 
     // On-call pager
     pagerChance: 0.3,
@@ -48,9 +48,9 @@
       { id: 'reach', name: 'CONSOLE CABLE +2 REACH', price: 40, desc: 'Use doors from further away. Bigger zap.' },
       { id: 'mug', name: 'COFFEE MUG', price: 15, desc: 'C = full stamina. Stacks to 3.' },
       { id: 'label', name: 'GOLDEN LABEL MAKER', price: 120, desc: 'Closed sites get documented: +25% pay there. The Auditor cares.' },
-      { id: 'cert1', name: 'CERT SCROLL: CCNA', price: 80, desc: 'Unlocks Packet Tracer, Config Commit, Rogue AP tickets.' },
-      { id: 'cert2', name: 'CERT SCROLL: CCNP', price: 200, desc: 'Unlocks Spanning Tree Siege tickets (100 T$).' },
-      { id: 'cert3', name: 'CERT SCROLL: CCIE', price: 400, desc: '+10% on ticket pay. Needed to face The Great Outage.' },
+      { id: 'cert1', name: 'CERT SCROLL: CCNA', price: 80, desc: 'Unlocks AP Placement and Config Commit tickets.' },
+      { id: 'cert2', name: 'CERT SCROLL: CCNP', price: 200, desc: 'Unlocks Packet Tracer and Rogue AP tickets.' },
+      { id: 'cert3', name: 'CERT SCROLL: CCIE', price: 400, desc: 'Unlocks Spanning Tree Siege (100 T$). +10% pay. Needed for The Great Outage.' },
       { id: 'drone', name: 'AI SIDEKICK DRONE', price: 500, desc: '3 charges. D on a mission intro = auto-solve.' },
       { id: 'hat', name: 'HARD HAT', price: 25, desc: 'Cosmetic. Safety first.' },
       { id: 'vest', name: 'HI-VIS VEST', price: 40, desc: 'Cosmetic. Visible from the parking lot.' },

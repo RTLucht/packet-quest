@@ -12,6 +12,8 @@
     grey: '#8090b0', dgrey: '#3a4460', green: '#3ce070', yellow: '#ffd23c',
     orange: '#ff8a2a', red: '#ff3c4c', purple: '#a050e0', brown: '#8a5a2a',
   };
+  // Tech$$$ banknote colors (match the Server Room Arcade site: teal face, amber coin).
+  PQ.BILL = { edge: '#e3f3f3', face: '#0f8b8d', deep: '#0b6466', line: '#7fd0d1', coin: '#e0a100' };
 
   // ---- Input ----
   const keys = {}, pressedNow = {};
@@ -180,24 +182,25 @@
   };
   PQ.inRect = (p, x, y, w, h) => p.x >= x && p.x < x + w && p.y >= y && p.y < y + h;
 
-  // Procedural Tech$$$ banknote (matches the blue currency art).
+  // Procedural Tech$$$ banknote (teal + amber, see PQ.BILL).
   PQ.drawBill = function (g, x, y, w, h, denom, tilt) {
     g.save();
     g.translate(Math.round(x + w / 2), Math.round(y + h / 2));
     if (tilt) g.rotate(tilt);
     const x0 = -w / 2, y0 = -h / 2;
-    PQ.rect(g, x0, y0, w, h, PQ.C.ice);
-    PQ.rect(g, x0 + 1, y0 + 1, w - 2, h - 2, PQ.C.royal);
-    PQ.rect(g, x0 + 2, y0 + 2, w - 4, h - 4, PQ.C.blue);
+    const B = PQ.BILL;
+    PQ.rect(g, x0, y0, w, h, B.edge);
+    PQ.rect(g, x0 + 1, y0 + 1, w - 2, h - 2, B.face);
+    PQ.rect(g, x0 + 2, y0 + 2, w - 4, h - 4, B.deep);
     if (h >= 10) {
-      g.strokeStyle = PQ.C.sky; g.lineWidth = 1; g.beginPath();
+      g.strokeStyle = B.line; g.lineWidth = 1; g.beginPath();
       g.moveTo(x0 + 3, y0 + h * 0.3); g.lineTo(x0 + w * 0.3, y0 + h * 0.3); g.lineTo(x0 + w * 0.36, y0 + h * 0.15);
       g.moveTo(x0 + w - 3, y0 + h * 0.75); g.lineTo(x0 + w * 0.68, y0 + h * 0.75); g.lineTo(x0 + w * 0.62, y0 + h * 0.88);
       g.stroke();
     }
     const r = Math.max(1.5, h * 0.28);
-    g.fillStyle = PQ.C.ice; g.beginPath(); g.arc(0, 0, r, 0, Math.PI * 2); g.fill();
-    g.fillStyle = PQ.C.royal; g.beginPath(); g.arc(0, 0, r * 0.62, 0.4, Math.PI * 1.6); g.fill();
+    g.fillStyle = B.coin; g.beginPath(); g.arc(0, 0, r, 0, Math.PI * 2); g.fill();
+    g.fillStyle = B.face; g.beginPath(); g.arc(0, 0, r * 0.62, 0.4, Math.PI * 1.6); g.fill();
     if (h >= 14) {
       g.fillStyle = PQ.C.white; g.fillRect(-r * 0.35, -r * 0.2, r * 0.7, r * 0.4);
       const fs = Math.max(6, Math.floor(h * 0.24));
@@ -206,7 +209,7 @@
       g.textAlign = 'left'; g.fillText(String(denom), x0 + 4, y0 + 4);
       g.textAlign = 'right'; g.fillText(String(denom), x0 + w - 4, y0 + h - fs - 4);
       if (w >= 80) {
-        g.font = '6px ' + PQ.FONT; g.textAlign = 'center'; g.fillStyle = PQ.C.ice;
+        g.font = '6px ' + PQ.FONT; g.textAlign = 'center'; g.fillStyle = B.edge;
         g.fillText('TECH$$$', 0, y0 + h - 10);
       }
     }
